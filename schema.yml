@@ -1,0 +1,10 @@
+version: 2
+
+models:
+    - name: stg_tpch_orders
+      description: "pull the order tables from the source to staging"
+     
+
+    - name: stg_tpch_line_items
+      description: "pull the line items from the source"
+      
