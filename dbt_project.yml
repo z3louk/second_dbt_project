@@ -38,7 +38,7 @@ clean-targets:         # directories to be removed by `dbt clean`
 models:
   second_dbt_project:
     +database: Analytics
-   
+    +schema: dbt_abdou
     # Applies to all files under models/example/
     staging:
       materialized: view
@@ -46,6 +46,7 @@ models:
       materialized: table
 seeds:
     +database: Analytics
+    +schema: dbt_abdou
    
     
   
