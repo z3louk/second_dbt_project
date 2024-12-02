@@ -38,7 +38,7 @@ clean-targets:         # directories to be removed by `dbt clean`
 models:
   second_dbt_project:
     +database: Analytics
-    +schema: DBT_ACHEN
+   
     # Applies to all files under models/example/
     staging:
       materialized: view
