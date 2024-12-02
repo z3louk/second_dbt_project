@@ -14,5 +14,4 @@ models:
     - name: int_order_items
       description: "third model  "
     
-    - name: fct_orders
-      description: "fourth model " 
+    
