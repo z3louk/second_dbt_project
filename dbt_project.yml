@@ -46,6 +46,6 @@ models:
       materialized: table
 seeds:
     +database: Analytics
-    +schema: DBT_ACHEN
+   
     
   
