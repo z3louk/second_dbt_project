@@ -1,0 +1,18 @@
+version: 2
+
+models:
+    - name: stg_tpch_orders
+      description: "pull the order tables from the source to staging"
+     
+
+    - name: stg_tpch_line_items
+      description: "pull the line items from the source"
+      
+    - name: stg_tpch_nations 
+      description: "pull csv file for countries"
+
+    - name: int_order_items
+      description: "third model  "
+    
+    - name: fct_orders
+      description: "fourth model " 
