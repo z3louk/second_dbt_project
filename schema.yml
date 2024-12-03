@@ -16,3 +16,6 @@ models:
     
     - name: fct_orders
       description: "fourth model " 
+
+    - name: aggregated_order_stats
+      description: "fifth model to try a macro"
