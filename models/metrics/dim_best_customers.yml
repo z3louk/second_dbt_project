@@ -1,0 +1,8 @@
+models:
+  - name: dim_best_customers
+    columns:
+      - name: CUSTOMER_ID
+         - primary key
+          
+        
+  

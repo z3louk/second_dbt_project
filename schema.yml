@@ -19,3 +19,11 @@ models:
 
     - name: aggregated_order_stats
       description: "fifth model to try a macro"
+
+
+    - name: dim_best_customers
+      description: "A table with the best 100 customers of the month"
+      columns:
+      - name: CUSTOMER_ID
+         - primary key
+    
