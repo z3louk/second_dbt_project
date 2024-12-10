@@ -1,6 +1,6 @@
 with source as (
 
-    select * from {{ source('tpch', 'orders') }}
+    select * from {{ source('RAW_1', 'orders') }}
 
 ),
 
@@ -8,15 +8,14 @@ renamed as (
 
     select
 
-        o_orderkey as order_key,
-        o_custkey as customer_key,
-        o_orderstatus as status_code,
-        o_totalprice as total_price,
-        o_orderdate as order_date,
-        o_orderpriority as priority_code,
-        o_clerk as clerk_name,
-        o_shippriority as ship_priority,
-        o_comment as comment
+        id as order_key,
+        user_id as customer_key,
+        
+        order_date as order_date,
+       
+       
+        status as order_status,
+        _ETL_LOADED_AT as order_loaded_at
 
     from source
 
