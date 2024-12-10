@@ -10,4 +10,4 @@ select
 from all_payment
 inner join customers_names on all_payment.customer_key = customers_names.customer_key
 group by all_payment.customer_key, customers_names.first_name, customers_names.last_name
-order by total_payment_amount desc  -- Ordering by total payment amount, if needed
+order by total_payment_amount   -- Ordering by total payment amount, if needed
