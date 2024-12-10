@@ -1,31 +1,8 @@
 version: 2
 
 sources:
-    - name: tpch
-      description: This is a replica of the Postgres database used by our app
-      database: SNOWFLAKE_SAMPLE_DATA
-      schema: tpch_sf1
-      tables:
-      - name: orders
-        description: main order tracking table
-        
-        columns:
-          - name: o_orderkey
-            description: SF*1,500,000 are sparsely populated
-            tests: 
-              - unique
-              - not_null
-
-      - name: lineitem
-        description: main lineitem table
-        columns:
-          - name: l_orderkey
-            description: Foreign Key to O_ORDERKEY
-            tests:
-              - relationships:
-                  to: source('tpch', 'orders')
-                  field: o_orderkey
-    - name: RAW
+    
+    - name: RAW_1
       description: This is a replica of the Postgres database used by our app
       database: RAW
       schema: jaffle_shop
@@ -39,6 +16,56 @@ sources:
             tests: 
               - unique
               - not_null
+      - name: orders
+        description: main order tracking table
+        
+        columns:
+          - name: ID
+            description: SF*1,500,000 are sparsely populated
+            tests: 
+              - unique
+              - not_null
+          - name: status 
+            description: the statut of the order, it only accepte two values returned or completed 
+            tests:
+              - accepted_values:
+                  values:
+                    - "returned" 
+                    - "completed"
+                    - "return_pending"
+                    - "shipped"
+                    - "placed"
+    - name: RAW_2
+      description: This is a replica of the Postgres database used by our app
+      database: RAW
+      schema: stripe
+      tables:
+      - name: payment
+        description: main order tracking table
+        
+        columns:
+          - name: ID
+            description: SF*1,500,000 are sparsely populated
+            tests: 
+              - unique
+              - not_null
+          - name: status 
+            description: the statut of the payment, it only accepte two values returned or completed 
+            tests:
+              - accepted_values:
+                  values:
+                    - "success" 
+                    - "fail"
+          - name: paymentmethod 
+            description: the method of the payment, it only accepte two values returned or completed 
+            tests:
+              - accepted_values:
+                  values:
+                    - "credit_card" 
+                    - "coupon"
+                    - "bank_transfer"
+                    - "gift_card"
+                    
       
       
       
